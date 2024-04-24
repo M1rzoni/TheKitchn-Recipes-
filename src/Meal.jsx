@@ -27,67 +27,67 @@ function Meal() {
             id="name"
             required
           />
-          <label for="name" class="form__label">
-            Search...
-          </label>
         </div>
 
         <button onClick={handelSubmit}>Submit</button>
       </div>
-      {items.map(
-        ({
-          idMeal,
-          strMeal,
-          strCategory,
-          strMealThumb,
-          strArea,
-          strIngredient1,
-          strIngredient2,
-          strIngredient3,
-          strIngredient4,
-          strIngredient5,
-          strIngredient6,
-          strMeasure1,
-          strMeasure2,
-          strMeasure3,
-          strMeasure4,
-          strMeasure5,
-          strMeasure6,
-          strInstructions,
-        }) => {
-          return (
-            <div key={idMeal}>
-              <p>Originates from: {strArea}</p>
-              <p>The name of the food: {strMeal}</p>
-              <div>
-                <h1>Sastojci:</h1>
-                <p>
-                  {strIngredient1}-{strMeasure1}
-                </p>
-                <p>
-                  {strIngredient2}: {strMeasure2}
-                </p>
-                <p>
-                  {strIngredient3}: {strMeasure3}
-                </p>
-                <p>
-                  {strIngredient4}: {strMeasure4}
-                </p>
-                <p>
-                  {strIngredient5}: {strMeasure5}
-                </p>
-                <p>
-                  {strIngredient6}: {strMeasure6}
-                </p>
-                <h1>Instructions: </h1>
-                <p>{strInstructions}</p>
+
+      <div className="main-food-container">
+        {items.map(
+          ({
+            idMeal,
+            strMeal,
+            strCategory,
+            strMealThumb,
+            strArea,
+            strIngredient1,
+            strIngredient2,
+            strIngredient3,
+            strIngredient4,
+            strIngredient5,
+            strIngredient6,
+            strMeasure1,
+            strMeasure2,
+            strMeasure3,
+            strMeasure4,
+            strMeasure5,
+            strMeasure6,
+            strInstructions,
+          }) => {
+            return (
+              <div className="food-container" key={idMeal}>
+                <p>Originates from: {strArea}</p>
+                <p>The name of the food: {strMeal}</p>
+                <div>
+                  <h1>Sastojci:</h1>
+                  <p>
+                    {strIngredient1}-{strMeasure1}
+                  </p>
+                  <p>
+                    {strIngredient2}: {strMeasure2}
+                  </p>
+                  <p>
+                    {strIngredient3}: {strMeasure3}
+                  </p>
+                  <p>
+                    {strIngredient4}: {strMeasure4}
+                  </p>
+                  <p>
+                    {strIngredient5}: {strMeasure5}
+                  </p>
+                  <p>
+                    {strIngredient6}: {strMeasure6}
+                  </p>
+                  <h1>Instructions: </h1>
+                  <p>{strInstructions}</p>
+                </div>
+                <p>{strCategory}</p>
+                <img src={strMealThumb} />
               </div>
-              <p>{strCategory}</p>
-              <img src={strMealThumb} />
-            </div>
-          );
-        }
-      )}
+            );
+          }
+        )}
+      </div>
     </>
   );
 }
